@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col" *ngFor="let item of weatherUIData">
+            <div class="card" style="width: 18rem;" [ngClass]="weatherClass">
+                <img class="card-img-top" width="50px" height="50px"  src="https://openweathermap.org/img/wn/{{item.icon}}.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.main}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

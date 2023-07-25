@@ -1,0 +1,19 @@
+.weather-sunny {
+    background-color: #fddb3a;
+    color: #333;
+  }
+  
+  .weather-cloudy {
+    background-color: #bdc3c7;
+    color: #333;
+  }
+  
+  .weather-rainy {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .card-img-top {
+    width:50px !important; 
+    height:50px !important; 
+  }

@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <app-weather-ui [weatherUIData]="watherData"></app-weather-ui>
+</div>
+<div class="container mt-5">
+<form [formGroup]="addWeather" (ngSubmit)="submitForm()">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><span class="required-asterisk">*</span>Lat</label>
+        <div class="col-sm-10">
+            <!-- Alerts user when control is interacted or form is submitted about errors-->
+            <input type="text" formControlName="lat" class="form-control" placeholder="Enter lat"
+                [ngClass]="{ 'is-invalid': (isFormSubmitted && addWeather.controls['lat'].errors) || (!addWeather.controls['lat'].pristine && addWeather.controls['lat'].invalid) }">
+  
+            <!-- Validation messages -->
+            <div class="invalid-feedback"
+                *ngIf="(isFormSubmitted && addWeather.controls['lat'].errors) || (!addWeather.controls['lat'].pristine && addWeather.controls['lat'].invalid)">
+                <div *ngIf="addWeather.controls['lat']?.errors?.['required']">lat is required</div>
+  
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><span class="required-asterisk">*</span>lon</label>
+        <div class="col-sm-10">
+            <!-- Alerts user when control is interacted or form is submitted about errors-->
+            <input type="text" formControlName="lon" class="form-control" placeholder="Enter lon"
+                [ngClass]="{ 'is-invalid': (isFormSubmitted && addWeather.controls['lon'].errors) || (!addWeather.controls['lon'].pristine && addWeather.controls['lon'].invalid) }">
+  
+            <!-- Validation messages -->
+            <div class="invalid-feedback"
+                *ngIf="(isFormSubmitted && addWeather.controls['lon'].errors) || (!addWeather.controls['lon'].pristine && addWeather.controls['lon'].invalid)">
+                <div *ngIf="addWeather.controls['lon']?.errors?.['required']">lon is required</div>
+  
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success btn-sm" [disabled]="addWeather.invalid">Add Codinates</button>
+    </div>
+</form>
+</div>
