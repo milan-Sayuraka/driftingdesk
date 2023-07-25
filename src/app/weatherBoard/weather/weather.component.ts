@@ -31,6 +31,7 @@ export class WeatherComponent {
       .subscribe({
         next: response => {
           this.watherData = response.weather
+          this.addWeather.reset();
           console.log('response data', this.watherData)
         },
         error: err => {
